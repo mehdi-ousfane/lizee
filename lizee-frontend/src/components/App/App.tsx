@@ -7,14 +7,6 @@ import {
 
 import PATH from '../../constants/paths';
 
-const params = {
-  limit: 6,
-  page: 1,
-};
-const options = {
-  body: JSON.stringify(params),
-};
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -47,10 +39,20 @@ const router = createBrowserRouter([
   {
     path: '/lizee/produits',
     element: <div>productspage</div>,
-    loader: async ({ request, params }) => {
-      return fetch(`/fake/api/teams/${params.teamId}.json`, {
-        signal: request.signal,
-      });
+    loader: async () => {
+      return fetch(
+        `https://lizee-test-dad-nextjs-admin.lizee.io/shop-api/taxon-products/by-slug/categorie-t-shirts?${new URLSearchParams(
+          { limit: '6', page: '1' },
+        )}`,
+      )
+        .then((res) => {
+          if (res.ok) {
+            return res.json();
+          }
+          throw res;
+        })
+        .then((data) => console.log(data))
+        .catch((err) => console.log('ca marche po!', err));
     },
     errorElement: <div>error</div>,
   },
