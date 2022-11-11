@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Bckground /> should render without crashing with dotted filter 1`] = `
+<div>
+  <div
+    class="Background"
+  >
+    <div
+      class="Background__filter Background__filter--dotted"
+    >
+      Child content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Bckground /> should render without crashing without filter 1`] = `
+<div>
+  <div
+    class="Background"
+  >
+    <div
+      class="Background__filter"
+    >
+      Child content
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,17 @@
+.background {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  background-image: url('../../../assets/homeBackground.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex: 1;
+  overflow: hidden;
+}
+
+.filter {
+  flex: 1;
+  display: flex;
+}
