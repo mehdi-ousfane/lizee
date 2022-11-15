@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -8,7 +7,7 @@ module.exports = {
   mode: 'development',
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     filename: 'bundle.js',
   },
   module: {
@@ -26,6 +25,9 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
+              import: true,
+              modules: true,
+              modules: { localIdentName: '[local]--[hash:base64:5]' },
             },
           },
           'postcss-loader',
@@ -40,12 +42,18 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
+              import: true,
               modules: true,
             },
           },
           'postcss-loader',
         ],
         include: /\.module\.css$/,
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+        include: [path.join(__dirname, '..', 'node_modules')],
       },
       {
         test: /\.ts(x)?$/,
@@ -56,11 +64,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      templateContent: () =>
-        '<!DOCTYPE html><html><head><base href="/"><meta charset="utf-8"><title>' +
-        'Lizee' +
-        '</title></head><body><div id="root"></div></body></html>',
-      filename: 'index.html',
+      template: './src/index.html',
     }),
     new WebpackShellPluginNext({
       onBuildStart: {
@@ -84,6 +88,12 @@ module.exports = {
     port: 8080,
   },
   resolve: {
+    alias: {
+      'react-calendar': path.resolve(
+        __dirname,
+        './node_modules/react-calendar',
+      ),
+    },
     extensions: ['.tsx', '.ts', '.js'],
   },
 };

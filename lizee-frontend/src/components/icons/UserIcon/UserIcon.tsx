@@ -3,8 +3,8 @@ import { SVGProps } from 'react';
 const UserIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     viewBox="0 0 512 512"
-    width="38"
-    height="38"
+    width="28"
+    height="28"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >

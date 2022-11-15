@@ -1,6 +1,6 @@
 import { ReactNode, MouseEvent } from 'react';
 
-import styles from './InformationCard.css';
+import styles from './InformationCard.module.css';
 
 interface Props {
   children?: ReactNode;

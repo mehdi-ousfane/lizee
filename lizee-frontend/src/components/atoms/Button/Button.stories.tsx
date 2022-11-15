@@ -6,5 +6,20 @@ export default {
   component: Button,
 } as Meta;
 
-export const Active = () => <Button>Mon bouton</Button>;
-export const Inactive = () => <Button disabled>Mon bouton</Button>;
+const containerStyle = {
+  display: 'flex',
+  height: '50px',
+  width: '80px',
+  justifyContent: 'center',
+};
+
+export const Active = () => (
+  <div style={containerStyle}>
+    <Button>Mon bouton</Button>
+  </div>
+);
+export const Inactive = () => (
+  <div style={containerStyle}>
+    <Button disabled>Mon bouton</Button>
+  </div>
+);

@@ -1,0 +1,11 @@
+.productContainer {
+  display: grid;
+  height: 100%;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+}

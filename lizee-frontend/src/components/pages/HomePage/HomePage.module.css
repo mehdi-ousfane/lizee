@@ -1,0 +1,82 @@
+.homePageContainer {
+  display: flex;
+  height: 100%;
+}
+
+.mainSectionContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 2rem 0 0 6rem;
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.descriptionTitle {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.description {
+  font-size: 1.2rem;
+}
+
+.calendarContainer {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.calendarContainer > button {
+  margin-left: 2rem;
+}
+
+.buttonsContainer {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards {
+  display: flex;
+}
+
+.cards > div {
+  width: 6rem;
+}
+
+.cardsContainer mark,
+.cardsContainer > p {
+  color: white;
+}
+
+.cardsContainer mark {
+  background: none;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.productsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  justify-items: center;
+  row-gap: 5rem;
+  padding: 3rem 0;
+}
+
+.productsContainer > div {
+  width: 7rem;
+}
+
+.productsContainer a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

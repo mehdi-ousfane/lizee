@@ -4,6 +4,9 @@ import InformationCard from './InformationCard';
 const containerStyle = {
   display: 'flex',
   background: 'black',
+  height: '80px',
+  justifyContent: 'center',
+  padding: '50px 0',
 };
 
 export default {

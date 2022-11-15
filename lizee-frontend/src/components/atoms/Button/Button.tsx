@@ -1,5 +1,5 @@
 import { ReactNode, MouseEvent } from 'react';
-import styles from './Button.css';
+import styles from './Button.module.css';
 
 interface Props {
   children: ReactNode;

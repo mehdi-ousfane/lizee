@@ -1,0 +1,38 @@
+.headerContainer {
+  display: flex;
+  height: 2.8rem;
+}
+
+.lizeeIconContainer {
+  flex: 1;
+}
+
+.lizeeIconContainer > svg {
+  cursor: pointer;
+}
+
+.navigationIcons {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.userIconContainer,
+.helpIconContainer {
+  display: flex;
+  align-items: center;
+}
+
+.userIconContainer > p,
+.helpIconContainer > p {
+  margin: 0 0.3rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.userIconContainer > p,
+svg,
+.helpIconContainer > p,
+svg {
+  cursor: pointer;
+}

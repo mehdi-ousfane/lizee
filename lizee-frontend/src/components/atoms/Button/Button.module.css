@@ -1,0 +1,47 @@
+.button {
+  background: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  transition-duration: 0.4s;
+}
+
+.button:disabled {
+  background: hsl(0, 0%, 75%);
+  color: grey;
+  pointer-events: none;
+}
+
+.button:hover:not(.button:disabled) {
+  transition-duration: 0.1s;
+  background: navy;
+}
+
+.button:after {
+  content: '';
+  background: blue;
+  display: block;
+  position: absolute;
+  border-radius: 1rem;
+  padding-top: 150%;
+  padding-left: 150%;
+  margin-left: -20px !important;
+  margin-top: -50%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}

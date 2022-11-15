@@ -3,8 +3,8 @@ import { SVGProps } from 'react';
 const LizeeIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="63"
-    height="28"
+    width="83"
+    height="48"
     viewBox="0 0 634 288"
     fill="none"
     {...props}
@@ -14,8 +14,8 @@ const LizeeIcon = (props: SVGProps<SVGSVGElement>) => (
       fill="#2933E7"
     />
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M173.002 191.702H101.73H96.0472H62.4902H56.1481H48.0236C40.0466 191.702 33.557 185.212 33.557 177.235V48.0212C33.557 40.0442 40.0466 33.557 48.0236 33.557C56.0006 33.557 62.4902 40.0442 62.4902 48.0212V183.32H96.0472V48.0212C96.0472 21.5416 74.5032 0 48.0236 0C21.544 0 0 21.5416 0 48.0212V177.235C0 203.715 21.544 225.259 48.0236 225.259H56.1481H62.4902H96.0472H101.73H173.002C180.979 225.259 187.468 231.746 187.468 239.725C187.468 247.7 180.979 254.192 173.002 254.192H110.511C102.537 254.192 96.0472 247.7 96.0472 239.725V233.64H62.4902V239.725C62.4902 266.205 84.0318 287.747 110.511 287.747H173.002C199.481 287.747 221.025 266.205 221.025 239.725C221.025 213.246 199.481 191.702 173.002 191.702Z"
       fill="url(#paint0_linear)"
     />
@@ -28,8 +28,8 @@ const LizeeIcon = (props: SVGProps<SVGSVGElement>) => (
         y2="251.117"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#2733E8" />
-        <stop offset="1" stop-color="#ED4D7B" />
+        <stop stopColor="#2733E8" />
+        <stop offset="1" stopColor="#ED4D7B" />
       </linearGradient>
     </defs>
   </svg>
