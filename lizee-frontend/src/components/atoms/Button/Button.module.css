@@ -27,12 +27,12 @@
 
 .button:after {
   content: '';
-  background: blue;
+  background: #ea5381;
   display: block;
   position: absolute;
   border-radius: 1rem;
-  padding-top: 150%;
-  padding-left: 150%;
+  padding-top: 160%;
+  padding-left: 160%;
   margin-left: -20px !important;
   margin-top: -50%;
   opacity: 0;

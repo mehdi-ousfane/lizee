@@ -1,5 +1,5 @@
 declare const styles: {
-  readonly "calendarContainer": string;
+  readonly "dateRangePickerContainer": string;
   readonly "dateValue": string;
 };
 export = styles;

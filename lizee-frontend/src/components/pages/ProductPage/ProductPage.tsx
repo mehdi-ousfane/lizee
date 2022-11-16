@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { ProductsRequestData } from '../../../types/Products';
+import { ProductsRequestData, SizePriceList } from '../../../types/Products';
+import Button from '../../atoms/Button/Button';
 import InformationCard from '../../molecules/InformationCard/InformationCard';
 import styles from './ProductPage.module.css';
 
@@ -12,47 +14,77 @@ const ProductsPage = ({ dataLoader }: Props) => {
   const productsList = data.items;
   const [searchParams] = useSearchParams();
   const slugRequested = searchParams.get('slug');
+  const [currentSizePrice, setCurrentSizePrice] = useState([
+    {
+      size: '',
+      price: 0,
+    },
+  ]);
 
   const selectedProduct = productsList.find((product) => {
     return product.slug === slugRequested;
   });
 
-  //TODO: list all the variant sizes with corresponding price and generate as much buttons
-  //TODO: stock current size and price with useState hook
-  //TODO: update the size/price state with each button
-  console.log(selectedProduct);
+  // list all the variants of the product
+  const selectedProductVariants = selectedProduct?.variants;
+  let newSizeList: SizePriceList = [];
+  for (const prop in selectedProductVariants) {
+    const sizeName = selectedProductVariants[prop]?.name;
+    const sizePrice = selectedProductVariants[prop].price?.current;
+    const newSizePrice = { size: sizeName, price: sizePrice };
+    newSizeList.push(newSizePrice);
+  }
+
+  // initiate the first render
+  useEffect(() => {
+    setCurrentSizePrice([
+      {
+        size: newSizeList[0].size,
+        price: newSizeList[0].price,
+      },
+    ]);
+  }, []);
+
   return (
     <div className={styles.productContainer}>
-      <InformationCard>
-        <img
-          src={selectedProduct?.images[0].cachedPath}
-          alt={selectedProduct?.name}
-          width="250"
-          height="350"
-        />
-      </InformationCard>
-      <div className={styles.descriptionContainer}>
-        <p>
-          Taille :{' '}
-          {
-            selectedProduct?.variants[`${selectedProduct?.code}-variant-0`]
-              ?.name
-          }
-        </p>
-        <p>
-          Prix :{' '}
-          {
-            selectedProduct?.variants[`${selectedProduct?.code}-variant-0`]
-              ?.price.current
-          }
-          {
-            selectedProduct?.variants[`${selectedProduct?.code}-variant-0`]
-              ?.price.currency
-          }
-        </p>
+      <div className={styles.imageContainer}>
         <InformationCard>
-          {selectedProduct?.name}
-          {selectedProduct?.description}
+          <img
+            src={selectedProduct?.images[0].cachedPath}
+            alt={selectedProduct?.name}
+            width="250"
+            height="350"
+          />
+        </InformationCard>
+      </div>
+      <div className={styles.descriptionContainer}>
+        <div className={styles.buttonsContainer}>
+          {newSizeList.map((child, key) => (
+            <Button
+              key={`${child.size}_${key}`}
+              onClick={() => {
+                const newCurrentSize = {
+                  size: child.size,
+                  price: child.price,
+                };
+                setCurrentSizePrice([newCurrentSize]);
+              }}
+            >
+              {child.size}
+            </Button>
+          ))}
+        </div>
+        <InformationCard>
+          <div className={styles.sizePrice}>
+            <p>Taille : {currentSizePrice[0].size}</p>
+            <p>Prix : {currentSizePrice[0].price}&euro;</p>
+          </div>
+        </InformationCard>
+        <InformationCard>
+          <div className={styles.description}>
+            {selectedProduct?.name}
+            {selectedProduct?.description}
+          </div>
         </InformationCard>
       </div>
     </div>

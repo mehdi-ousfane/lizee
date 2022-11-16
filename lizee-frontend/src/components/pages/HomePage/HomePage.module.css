@@ -5,37 +5,73 @@
 
 .mainSectionContainer {
   display: flex;
+  flex: 1;
   flex-direction: column;
   height: 100%;
   margin: 2rem 0 0 6rem;
 }
 
 .mainTitle {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
+  font-family: 'Patron webfont', sans-serif;
+  color: white;
   font-weight: bold;
 }
 
 .descriptionTitle {
+  margin-top: 1rem;
   font-weight: bold;
+  font-family: 'Patron webfont', sans-serif;
+  color: white;
   font-size: 1.2rem;
+  margin: 0;
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+  color: white;
+  font-family: 'Patron webfont', sans-serif;
+  margin-top: 1rem;
 }
 
 .calendarContainer {
   display: flex;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 
 .calendarContainer > button {
   margin-left: 2rem;
+  font-family: 'Patron webfont', sans-serif;
+  width: 6.5rem;
+  background-color: #ea5381;
+}
+
+.calendarContainer > button:hover:not(.button:disabled) {
+  background: white;
+  color: #ea5381;
 }
 
 .buttonsContainer {
   display: flex;
-  margin-bottom: 1rem;
+  margin: 1.3rem 0;
+}
+
+.buttonsContainer > button {
+  font-family: 'Patron webfont', sans-serif;
+  width: 8rem;
+  height: 2.4rem;
+}
+
+.buttonsContainer button:nth-child(2) {
+  margin-left: 1.5rem;
+  background: none;
+  border: 1px solid #ea5381;
+  color: #ea5381;
+}
+
+.buttonsContainer button:nth-child(2):hover:not(.button:disabled) {
+  background: white;
 }
 
 .cardsContainer {
@@ -48,35 +84,50 @@
 }
 
 .cards > div {
-  width: 6rem;
+  width: 8rem;
+  background: none;
+}
+
+.cards p {
+  margin-top: 0;
 }
 
 .cardsContainer mark,
-.cardsContainer > p {
+.cardsContainer p {
   color: white;
+  font-family: 'Patron webfont', sans-serif;
 }
 
 .cardsContainer mark {
   background: none;
   font-style: italic;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .productsContainer {
   display: grid;
+  flex: 1;
   grid-template-columns: 1fr 1fr;
   width: 100%;
   justify-items: center;
-  row-gap: 5rem;
+  row-gap: 1rem;
   padding: 3rem 0;
 }
 
 .productsContainer > div {
-  width: 7rem;
+  width: 8rem;
 }
 
 .productsContainer a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
+}
+
+.productsContainer a > p {
+  margin-top: 1rem;
+  color: white;
+  font-family: 'Patron webfont', sans-serif;
 }

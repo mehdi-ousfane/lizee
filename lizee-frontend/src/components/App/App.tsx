@@ -44,8 +44,6 @@ const router = createBrowserRouter([
           <HomePage dataLoader={useLoaderData as () => ProductsRequestData} />
         ),
         loader: async () => {
-          // write function in another file to make a custom hook
-          // and add abort after getting the data inside
           let abortController = new AbortController();
           let { signal } = abortController;
           return fetch(
@@ -67,7 +65,7 @@ const router = createBrowserRouter([
               if (err.name === 'AbortError') {
                 console.log(err);
               }
-              console.log('ca marche po!', err);
+              console.log('ERROR:', err);
             });
         },
         errorElement: <div>error</div>,
@@ -80,8 +78,6 @@ const router = createBrowserRouter([
           />
         ),
         loader: async () => {
-          // write function in another file to make a custom hook
-          // and add abort after getting the data inside
           let abortController = new AbortController();
           let { signal } = abortController;
           return fetch(
@@ -103,7 +99,7 @@ const router = createBrowserRouter([
               if (err.name === 'AbortError') {
                 console.log(err);
               }
-              console.log('ca marche po!', err);
+              console.log('ERROR:', err);
             });
         },
         errorElement: <div>error</div>,

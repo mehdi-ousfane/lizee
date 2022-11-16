@@ -5,6 +5,7 @@ declare const styles: {
   readonly "descriptionTitle": string;
   readonly "description": string;
   readonly "calendarContainer": string;
+  readonly "button": string;
   readonly "buttonsContainer": string;
   readonly "cardsContainer": string;
   readonly "cards": string;

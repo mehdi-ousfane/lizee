@@ -3,9 +3,48 @@
   height: 100%;
   align-items: center;
   grid-template-columns: 1fr 1fr;
+  margin: 0 5rem;
+}
+
+.imageContainer > div:hover {
+  background-color: hsla(0, 0%, 8%, 0.4);
+  cursor: default;
 }
 
 .descriptionContainer {
   display: flex;
   flex-direction: column;
+  color: white;
+  font-family: 'Patron webfont', sans-serif;
+}
+
+.descriptionContainer > div:nth-child(n + 2):hover {
+  background-color: hsla(0, 0%, 8%, 0.4);
+  cursor: default;
+}
+
+.buttonsContainer {
+  display: flex;
+  margin: 0 1.2rem 1.8rem 0;
+}
+
+.buttonsContainer button {
+  flex: 1;
+}
+
+.buttonsContainer button:nth-child(n + 2) {
+  margin-left: 1rem;
+}
+
+.sizePrice {
+  display: flex;
+  padding: 2rem 0;
+}
+
+.sizePrice > p {
+  margin-right: 3rem;
+}
+
+.description {
+  padding: 2rem 0;
 }

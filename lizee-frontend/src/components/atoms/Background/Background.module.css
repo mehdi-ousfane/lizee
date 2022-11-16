@@ -14,4 +14,19 @@
 .filter {
   flex: 1;
   height: 100%;
+  --bg-color: hsla(0, 0%, 8%, 0.4);
+  --dot-color: hsla(0, 0%, 83%, 0.2);
+  --dot-size: 0.5px;
+  --dot-space: 10px;
+  background-image: radial-gradient(
+      var(--dot-color) var(--dot-size),
+      transparent var(--dot-size)
+    ),
+    radial-gradient(
+      var(--dot-color) var(--dot-size),
+      transparent var(--dot-size)
+    );
+  background-color: var(--bg-color);
+  background-position: 0 0, var(--dot-space) var(--dot-space);
+  background-size: calc(var(--dot-space) * 2) calc(var(--dot-space) * 2);
 }

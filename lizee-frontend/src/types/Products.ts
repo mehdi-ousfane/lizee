@@ -69,3 +69,10 @@ export type ProductsRequestData = {
     self: string;
   };
 };
+
+type SizePrice = {
+  size: string;
+  price: number;
+};
+
+export type SizePriceList = SizePrice[];

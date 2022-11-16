@@ -12,8 +12,6 @@ interface Props {
   dataLoader: () => ProductsRequestData;
 }
 
-//TODO: should decompose the page into lower atomic level components for better sustainability
-
 const HomePage = ({ dataLoader }: Props) => {
   const data: ProductsRequestData = dataLoader();
   return (
@@ -30,6 +28,7 @@ const HomePage = ({ dataLoader }: Props) => {
         </div>
         <div className={styles.buttonsContainer}>
           <Button>Go to shop</Button>
+          <Button>See our pack</Button>
         </div>
         <div className={styles.cardsContainer}>
           <div className={styles.cards}>
@@ -61,10 +60,10 @@ const HomePage = ({ dataLoader }: Props) => {
                 <img
                   src={item.images[0].cachedPath}
                   alt={item.name}
-                  width="50"
-                  height="60"
+                  width="90"
+                  height="120"
                 />
-                {item.name}
+                <p>{item.name}</p>
               </Link>
             </InformationCard>
           );

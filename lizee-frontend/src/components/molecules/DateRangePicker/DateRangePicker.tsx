@@ -5,7 +5,7 @@ import { addDays } from 'date-fns';
 
 import 'react-calendar/dist/Calendar.css';
 import '../../../assets/styles/styles.css';
-import styles from './Calendar.css';
+import styles from './DateRangePicker.module.css';
 
 const DateRangePicker = () => {
   const [range, setRange] = useState([
@@ -17,15 +17,11 @@ const DateRangePicker = () => {
   const [open, setOpen] = useState(false);
   const refOne = useRef<HTMLDivElement>(null);
 
-  console.log('----> RANGE', range);
-
   useEffect(() => {
     document.addEventListener('click', hideOnClickOutside, true);
   }, []);
 
   const hideOnClickOutside = (e: MouseEvent) => {
-    // Should write a type assertion function here to check if e is a Node type
-    // But no necessary for the purpose of this project hihi^_^
     if (refOne.current && !refOne.current.contains(e.target as Node)) {
       setOpen(false);
     }
@@ -39,7 +35,7 @@ const DateRangePicker = () => {
     : 'error';
 
   return (
-    <div className={styles.calendarContainer}>
+    <div className={styles.dateRangePickerContainer}>
       <div
         onClick={() => setOpen((open) => !open)}
         className={styles.dateValue}

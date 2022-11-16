@@ -1,5 +1,4 @@
 const baseConfig = require('../webpack.config');
-// const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],

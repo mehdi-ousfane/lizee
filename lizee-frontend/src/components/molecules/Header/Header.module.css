@@ -4,6 +4,7 @@
 }
 
 .lizeeIconContainer {
+  margin-left: 6rem;
   flex: 1;
 }
 
@@ -13,6 +14,7 @@
 
 .navigationIcons {
   display: flex;
+  margin-right: 7rem;
   flex: 1;
   justify-content: flex-end;
   align-items: center;
@@ -27,7 +29,8 @@
 .userIconContainer > p,
 .helpIconContainer > p {
   margin: 0 0.3rem;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Patron webfont', sans-serif;
+  font-size: 0.8rem;
 }
 
 .userIconContainer > p,

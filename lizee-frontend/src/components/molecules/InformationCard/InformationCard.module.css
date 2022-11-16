@@ -1,17 +1,19 @@
 .informationCard {
   display: flex;
   border: 1px solid white;
+  font-family: 'Patron webfont', sans-serif;
+  font-size: 0.9rem;
   margin-right: 1rem;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
   border: 0.1rem solid white;
-  background-color: rgba(255, 255, 254, 0.774);
+  background-color: hsla(0, 0%, 8%, 0.4);
   border-radius: 1rem;
   cursor: pointer;
 }
 
 .informationCard:hover {
-  background-color: white;
+  background-color: hsla(0, 0%, 8%, 0.688);
 }
