@@ -27,7 +27,6 @@
     "react": "18.2.0",
     "react-calendar": "4.0.0",
     "react-dom": "18.2.0",
-    "react-multi-carousel": "2.8.2",
     "react-router": "6.4.3",
     "react-router-dom": "6.4.3",
     "storybook": "6.5.13"
